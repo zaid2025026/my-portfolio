@@ -1,6 +1,55 @@
 ---
 // src/pages/index.astro
 import '../styles/global.css';
+
+// 1. بيانات المشاريع الـ 3 المجهزة من اليوم الأول
+const projects = [
+  {
+    title: "المنصة الإلكترونية الذكية (My Store & Telegram)",
+    description: "متجر إلكتروني متكامل باستخدام Django مع ربط مباشر ومؤتمت لتنبيهات الطلبات والفواتير عبر Telegram API.",
+    tags: ["Python", "Django", "Telegram API", "SQLite/PostgreSQL"],
+    link: "https://github.com/zaid2025026/my_store",
+    icon: "🛒"
+  },
+  {
+    title: "نظام الرقابة وتقييم الائتمان (Credit Risk System)",
+    description: "تصميم ونمذجة نظام بنكي لتحليل الجدارة الائتمانية ومراقبة القروض المتعثرة بناءً على المؤشرات المالية وقواعد البيانات.",
+    tags: ["SQL", "PL/SQL", "Oracle APEX", "Risk Analysis"],
+    link: "https://github.com/zaid2025026",
+    icon: "🏦"
+  },
+  {
+    title: "المساعد الآلي السحابي (Cloud Automated Bot)",
+    description: "تطوير ونشر بوت آلي على بيئة Replit يعمل على مدار الساعة لجلب وجدولة البيانات وإرسال التحديثات آلياً.",
+    tags: ["Python", "Replit", "Automation", "RSS Parsers"],
+    link: "https://github.com/zaid2025026",
+    icon: "🤖"
+  }
+];
+
+// 2. بيانات الخدمات الـ 4
+const services = [
+  {
+    title: "تطوير تطبيقات الويب والأنظمة",
+    desc: "بناء منصات ويب آمنة ومخصصة بأعلى مستويات الأداء باستخدام Python و Django مع لوحات تحكم متكاملة.",
+    icon: "🌐"
+  },
+  {
+    title: "أتمتة الأعمال وبناء البوتات",
+    desc: "ربط الخدمات والمتاجر ببوتات تفاعلية ذكية (تليجرام/واتساب) وتوفير وقت الإدخال اليدوي.",
+    icon: "⚡"
+  },
+  {
+    title: "هندسة وإدارة قواعد البيانات",
+    desc: "تصميم الاستعلامات المعقدة وتطوير معمارية قواعد البيانات (SQL / PL-SQL) للأنظمة المالية والإدارية.",
+    icon: "📊"
+  },
+  {
+    title: "استشارات الأنظمة التقنية والمالية",
+    desc: "تقييم المتطلبات البرمجية واختيار المعمارية الأنسب لمشروعك قبل البدء للتأكد من الموثوقية والأمان.",
+    icon: "💡"
+  }
+];
 ---
 
 <html lang="ar" dir="rtl">
@@ -9,12 +58,11 @@ import '../styles/global.css';
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <title>زيد | Software & FinTech Developer</title>
-    <!-- استدعاء خط تجول -->
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
   </head>
   <body class="bg-slate-900 text-slate-100 font-['Tajawal',sans-serif] min-h-screen">
     
-    <!-- 1. Header & Navigation -->
+    <!-- Navigation -->
     <header class="max-w-6xl mx-auto p-6 flex justify-between items-center border-b border-slate-800">
       <div class="text-2xl font-bold text-blue-500">زيد<span class="text-white">.Dev</span></div>
       <nav class="space-x-6 space-x-reverse hidden md:flex text-slate-300">
@@ -27,8 +75,8 @@ import '../styles/global.css';
       </a>
     </header>
 
-    <!-- 2. Hero Section -->
-    <main class="max-w-6xl mx-auto px-6 py-20 text-center md:text-right flex flex-col md:flex-row items-center justify-between gap-12">
+    <!-- Hero Section -->
+    <section class="max-w-6xl mx-auto px-6 py-20 text-center md:text-right flex flex-col md:flex-row items-center justify-between gap-12">
       <div class="md:w-2/3 space-y-6">
         <div class="inline-block bg-blue-950 text-blue-400 px-4 py-1.5 rounded-full text-sm font-semibold border border-blue-800/50">
           مطور أنظمة برمجية وحلول مالية ⚡
@@ -49,7 +97,6 @@ import '../styles/global.css';
         </div>
       </div>
 
-      <!-- Avatar / Graphic -->
       <div class="md:w-1/3 flex justify-center">
         <div class="w-64 h-64 rounded-2xl bg-gradient-to-tr from-blue-600 to-indigo-900 flex items-center justify-center p-1 shadow-2xl">
           <div class="w-full h-full bg-slate-900 rounded-2xl flex flex-col items-center justify-center p-6 text-center border border-slate-800">
@@ -59,7 +106,64 @@ import '../styles/global.css';
           </div>
         </div>
       </div>
-    </main>
+    </section>
+
+    <!-- 3. Projects Section (معرض الأعمال) -->
+    <section id="projects" class="max-w-6xl mx-auto px-6 py-16 border-t border-slate-800">
+      <div class="mb-12 text-center md:text-right">
+        <h2 class="text-3xl font-bold text-white mb-3">معرض الأعمال والمشاريع</h2>
+        <p class="text-slate-400">نماذج تطبيقية تظهر الحلول التقنية والأتمتة التي قمت بتطويرها:</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {projects.map((item) => (
+          <div class="bg-slate-800/50 border border-slate-700/60 hover:border-blue-500/50 rounded-2xl p-6 transition flex flex-col justify-between group">
+            <div>
+              <div class="text-4xl mb-4 p-3 bg-slate-900 w-fit rounded-xl border border-slate-800 group-hover:scale-110 transition">
+                {item.icon}
+              </div>
+              <h3 class="text-xl font-bold text-white mb-3">{item.title}</h3>
+              <p class="text-slate-400 text-sm leading-relaxed mb-6">{item.description}</p>
+            </div>
+            
+            <div>
+              <div class="flex flex-wrap gap-2 mb-6">
+                {item.tags.map((tag) => (
+                  <span class="bg-blue-950 text-blue-300 text-xs px-2.5 py-1 rounded-md border border-blue-900/40">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              <a href={item.link} target="_blank" class="block text-center bg-slate-900 hover:bg-blue-600 text-slate-200 hover:text-white py-2.5 rounded-xl text-sm font-semibold transition border border-slate-700">
+                عرض الكود / التفاصيل ➔
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- 4. Services Section (الخدمات) -->
+    <section id="services" class="max-w-6xl mx-auto px-6 py-16 border-t border-slate-800">
+      <div class="mb-12 text-center md:text-right">
+        <h2 class="text-3xl font-bold text-white mb-3">الخدمات التي أقدمها</h2>
+        <p class="text-slate-400">حلول مخصصة لمساعدتك في أتمتة وبناء مشروعك بأعلى كفاءة:</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {services.map((s) => (
+          <div class="bg-slate-800/30 border border-slate-800 p-8 rounded-2xl hover:border-slate-700 transition flex gap-6 items-start">
+            <div class="text-4xl p-4 bg-blue-950/50 rounded-2xl border border-blue-900/30 text-blue-400">
+              {s.icon}
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-white mb-2">{s.title}</h3>
+              <p class="text-slate-400 text-sm leading-relaxed">{s.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
 
   </body>
 </html>
