@@ -1,17 +1,65 @@
 ---
-
+// src/pages/index.astro
+import '../styles/global.css';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <title>زيد | Software & FinTech Developer</title>
+    <!-- استدعاء خط تجول -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-slate-900 text-slate-100 font-['Tajawal',sans-serif] min-h-screen">
+    
+    <!-- 1. Header & Navigation -->
+    <header class="max-w-6xl mx-auto p-6 flex justify-between items-center border-b border-slate-800">
+      <div class="text-2xl font-bold text-blue-500">زيد<span class="text-white">.Dev</span></div>
+      <nav class="space-x-6 space-x-reverse hidden md:flex text-slate-300">
+        <a href="#projects" class="hover:text-blue-400 transition">الأعمال</a>
+        <a href="#services" class="hover:text-blue-400 transition">الخدمات</a>
+        <a href="#contact" class="hover:text-blue-400 transition">التواصل</a>
+      </nav>
+      <a href="#contact" class="bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-lg font-medium transition">
+        تواصل معي
+      </a>
+    </header>
+
+    <!-- 2. Hero Section -->
+    <main class="max-w-6xl mx-auto px-6 py-20 text-center md:text-right flex flex-col md:flex-row items-center justify-between gap-12">
+      <div class="md:w-2/3 space-y-6">
+        <div class="inline-block bg-blue-950 text-blue-400 px-4 py-1.5 rounded-full text-sm font-semibold border border-blue-800/50">
+          مطور أنظمة برمجية وحلول مالية ⚡
+        </div>
+        <h1 class="text-4xl md:text-6xl font-bold leading-tight">
+          أحوّل التحديات المعقدة إلى <span class="text-blue-500">أنظمة برمجية ذكية</span>
+        </h1>
+        <p class="text-slate-400 text-lg md:text-xl leading-relaxed">
+          أساعد الشركات والمؤسسات في أتمتة أعمالها وتطوير منصات ويب آمنة ومخصصة تجمع بين قوة الأداء والدقة المالية.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 pt-4 justify-center md:justify-start">
+          <a href="#projects" class="bg-blue-600 hover:bg-blue-500 text-white px-8 py-3 rounded-xl font-bold text-center transition shadow-lg shadow-blue-600/20">
+            استكشف أعمالي
+          </a>
+          <a href="#contact" class="border border-slate-700 hover:border-slate-500 text-slate-300 px-8 py-3 rounded-xl font-bold text-center transition">
+            حجز استشارة
+          </a>
+        </div>
+      </div>
+
+      <!-- Avatar / Graphic -->
+      <div class="md:w-1/3 flex justify-center">
+        <div class="w-64 h-64 rounded-2xl bg-gradient-to-tr from-blue-600 to-indigo-900 flex items-center justify-center p-1 shadow-2xl">
+          <div class="w-full h-full bg-slate-900 rounded-2xl flex flex-col items-center justify-center p-6 text-center border border-slate-800">
+            <span class="text-5xl mb-4">💻</span>
+            <span class="font-bold text-lg">Zaid | زيد</span>
+            <span class="text-xs text-slate-400 mt-1">Python • Django • SQL • AI</span>
+          </div>
+        </div>
+      </div>
+    </main>
+
+  </body>
 </html>
