@@ -1,1 +1,8 @@
 @import "tailwindcss";
+
+/* ضمان التجاوب واتجاه اللغة */
+html, body {
+  direction: rtl;
+  overflow-x: hidden;
+  width: 100%;
+}
