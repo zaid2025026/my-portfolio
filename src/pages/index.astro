@@ -1,5 +1,4 @@
 ---
-// src/pages/index.astro
 import '../styles/global.css';
 
 // 1. بيانات المشاريع
@@ -59,15 +58,15 @@ const telegramLink = "https://t.me/zaid2025026";
 
 <html lang="ar" dir="rtl">
   <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}/favicon.svg`} />
-  <title>زيد | Software & FinTech Developer</title>
-  
-  <!-- استدعاء Tailwind CSS المباشر لضمان التنسيق والتجاوب -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`} />
+    <title>زيد | Software & FinTech Developer</title>
+    
+    <!-- محرك التنسيقات Tailwind المباشر والمضمون 100% -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
   </head>
   <body class="bg-slate-950 text-slate-100 font-['Tajawal',sans-serif] min-h-screen selection:bg-blue-600 selection:text-white relative">
     
@@ -110,7 +109,7 @@ const telegramLink = "https://t.me/zaid2025026";
       <div class="md:w-1/3 flex justify-center">
         <div class="relative w-72 h-72 md:w-80 md:h-80 rounded-3xl p-1 bg-gradient-to-tr from-blue-600 via-indigo-600 to-emerald-500 shadow-2xl shadow-blue-500/20 group">
           <img 
-            src={`${import.meta.env.BASE_URL}/hero-img.jpg`}
+            src={`${import.meta.env.BASE_URL}hero-img.jpg`}
             alt="زيد - مطور أنظمة وحلول مالية" 
             class="w-full h-full object-cover rounded-[22px] border border-slate-800 transition transform group-hover:scale-[1.02]"
           />

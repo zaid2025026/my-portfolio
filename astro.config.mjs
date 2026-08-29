@@ -3,11 +3,12 @@ import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
   site: 'https://zaid2025026.github.io',
-  base: '/my-portfolio/',
+  base: '/my-portfolio',
+  trailingSlash: 'ignore',
   vite: {
     plugins: [tailwindcss()],
     build: {
-      cssCodeSplit: false // يدمج كل التنسيقات في ملف واحد يضمن عدم ضياعه
-    }
+      cssCodeSplit: false, // تجميع التنسيقات لضمان التحميل
+    },
   },
 });
