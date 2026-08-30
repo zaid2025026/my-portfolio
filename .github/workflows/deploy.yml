@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main ] # أو master حسب اسم الفرع الرئيسي عندك
+    branches: [ master ] # أو master حسب اسم الفرع الرئيسي عندك
 
 permissions:
   contents: read
