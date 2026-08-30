@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@source "../**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}";
+
 html, body {
   direction: rtl;
   overflow-x: hidden;
